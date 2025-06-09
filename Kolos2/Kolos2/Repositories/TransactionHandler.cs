@@ -1,12 +1,13 @@
+using Kolos2.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kolos2.Repositories;
 
 public class TransactionHandler
 {
-    private readonly DbContext _context;
+    private readonly DatabaseContext _context;
 
-    public TransactionHandler(DbContext context)
+    public TransactionHandler(DatabaseContext context)
     {
         this._context = context;
     }

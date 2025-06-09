@@ -11,8 +11,9 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
 );
 
-builder.Services.AddScoped<IDbService, DbService>();
-builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+builder.Services.AddScoped<TransactionHandler>();
+builder.Services.AddScoped<IService, Service>();
+builder.Services.AddScoped<IRepository, Repository>();
 
 
 var app = builder.Build();
